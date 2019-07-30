@@ -1,6 +1,8 @@
 #include <iostream>
+#include <stdio.h>
+#include <ctype.h> 
+#include <conio.h>
 using namespace std;
-
 //declaracion de funciones
 //string o char ?? nomb_poke(); //no me zalee es inpozzibleee!
 int nivel_poke();
@@ -56,29 +58,27 @@ int main()
 	cout << "*-*-*-*-*-*-*"<< endl;
 	
 	while (consulta != "no") {
-		int a=11; // el choclo que continua es porque no se como corno llamar una funcion tipo char (si eso existe)
-		while (a>10){ //ni que funcion aplicar para que me cuente las letras...
+		int a=11; // el choclo que continua es porque no se como corno llamar una funcion tipo char (si eso exite)
+		while (a>10){ //ni que funcion aplicar para que me cuente las letras... aguante python!
 			
 			cout << "INGRESE NOMBRE DE SU POKEMON : "<< endl;
 			cin >> nombre;
 			for (a=0;nombre[a]; a++){
 				total=a;
 				//cout << total;
-				cout << endl;
 			}
-	if (total > 10){
-		cout << "nombre no valido " << endl <<endl ;
+	if (total > 9){
+		cout << ""<< endl <<"" << "nombre no valido" << endl  ;
 	}
 			
-			} //fin de choclo.
+			}
 	 
-		
 		//nomb_poke();
 			
 		cout << "INGRESE NIVEL :"<< endl;
 		nivel=nivel_poke();
 		
-		cout << "INGRESE TIPO (F/A/T/E): "<< endl;
+		cout << "INGRESE TIPO (F/A/T/E)"<< endl;
 		tipo=tipo_poke();
 
 		cout << "DESEA CARGAR OTRO POKEMON (si/no): "<< endl;
@@ -99,7 +99,7 @@ int main()
 		cout << "  " << endl;
 		nivell[i];
 		cout << "  " << endl;
-		cout << max_level(); // pokemon de maximo nivel 
+		cout << max_level();
 	}
 	// fin de control. 
 	//cout << max_level();
@@ -107,6 +107,7 @@ int main()
 	return 0;
 }
 
+/* intento de pajerara 1.
 string nomb_poke()
 	{
 		cin >> nombre;
@@ -116,7 +117,7 @@ string nomb_poke()
 		}
 		return nombre;
 	}
-	
+	*/
 	
 int nivel_poke()
 	{
@@ -129,9 +130,13 @@ int nivel_poke()
 	}
 	
 string tipo_poke(){
-	string a,f,t,e;
+	char a,f,t,e;
 	cin >> tipo;
-	while (tipo != "f"){
+	int i;
+	for(i = 0; tipo[i]; i++)
+      tipo[i] = tolower(tipo[i]);
+      //cout << tipo;
+	while (tipo != "f"){ //no puedo pones mas condiciones ! el programa compila pero no ejecuta las restricciones que deseo.
 	
 		cout << " valor incorrecto, elija el tipo con una letra (t/f/a/e): ";
 		cin >> tipo;
