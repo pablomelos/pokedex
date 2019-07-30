@@ -56,8 +56,8 @@ int main()
 	cout << "*-*-*-*-*-*-*"<< endl;
 	
 	while (consulta != "no") {
-		int a=11; // el choclo que continua es porque no se como corno llamar una funcion tipo char (si eso exite)
-		while (a>10){ //ni que funcion aplicar para que me cuente las letras... aguante python!
+		int a=11; // el choclo que continua es porque no se como corno llamar una funcion tipo char (si eso existe)
+		while (a>10){ //ni que funcion aplicar para que me cuente las letras...
 			
 			cout << "INGRESE NOMBRE DE SU POKEMON : "<< endl;
 			cin >> nombre;
@@ -67,10 +67,10 @@ int main()
 				cout << endl;
 			}
 	if (total > 10){
-		cout << "nombre no valido" << endl <<endl ;
+		cout << "nombre no valido " << endl <<endl ;
 	}
 			
-			}
+			} //fin de choclo.
 	 
 		
 		//nomb_poke();
@@ -78,7 +78,7 @@ int main()
 		cout << "INGRESE NIVEL :"<< endl;
 		nivel=nivel_poke();
 		
-		cout << "INGRESE TIPO (F/A/T/E)"<< endl;
+		cout << "INGRESE TIPO (F/A/T/E): "<< endl;
 		tipo=tipo_poke();
 
 		cout << "DESEA CARGAR OTRO POKEMON (si/no): "<< endl;
@@ -99,7 +99,7 @@ int main()
 		cout << "  " << endl;
 		nivell[i];
 		cout << "  " << endl;
-		cout << max_level();
+		cout << max_level(); // pokemon de maximo nivel 
 	}
 	// fin de control. 
 	//cout << max_level();
