@@ -26,20 +26,20 @@ int cant500;
 int id[150];
 
 //minimos y maximos por tipo
-int maxf=0;
+int maxf;
+int minf;
 string pokemaxf;
 string pokeminf;
-int minf=1000;
-int maxe=0;
-int mine=1000;
+int maxe;
+int mine;
 string pokemaxe;
 string pokemine;
-int maxt=0;
-int mint=1000;
+int maxt;
+int mint;
 string pokemaxt;
 string pokemint;
-int maxa=0;
-int mina=1000;
+int maxa;
+int mina;
 string pokemaxa;
 string pokemina;
 int cont_f=0;
@@ -50,6 +50,16 @@ float nivelf=0;
 float nivele=0;
 float nivelt=0;
 float nivela=0;
+// check maximos y minimos para no harcodear.
+int prumaxf=true;
+int prumaxe=true;
+int prumaxt=true;
+int prumaxa=true;
+int pruminf=true;
+int prumine=true;
+int prumint=true;
+int prumina=true;
+
 
 //bloque principal
 int main()
@@ -84,12 +94,14 @@ int main()
 		}
 	
 	if (tipo == "f"){
-		if (nivel > maxf){
+		if (prumaxf == true ||nivel > maxf){
 			maxf=nivel;
 			pokemaxf=nom[e];
-		}else{ if ( nivel < minf){
+			prumaxf=false;
+		}else{ if (pruminf == true || nivel < minf ){
 			minf= nivel;
 			pokeminf=nom[e];
+			pruminf=false;
 		}
 		}	nivelf=nivelf+nivel;
 			cont_f ++;
@@ -98,12 +110,14 @@ int main()
 	}
 	
 		if (tipo == "e"){
-		if (nivel > maxe){
+		if (prumaxe == true ||nivel > maxe){
 			maxe=nivel;
 			pokemaxe=nom[e];
-		}else{ if ( nivel < mine){
+			prumaxe = false;
+		}else{ if ( prumine == true || nivel < mine){
 			mine= nivel;
 			pokemine=nom[e];
+			prumine= false;
 		}
 		}	nivele=nivele+nivel;
 			cont_e ++;
@@ -111,12 +125,14 @@ int main()
 	}
 	
 		if (tipo == "t"){
-		if (nivel > maxt){
+		if (prumaxt == true || nivel > maxt){
 			maxt=nivel;
 			pokemaxt=nom[e];
-		}else{ if ( nivel < mint){
+			prumaxt=false;
+		}else{ if (prumint == true || nivel < mint){
 			mint= nivel;
 			pokemint=nom[e];
+			prumint=false;
 		}
 		}	nivelt=nivelt+nivel;
 			cont_t ++;
@@ -124,12 +140,14 @@ int main()
 	}
 	
 		if (tipo == "a"){
-		if (nivel > maxa){
+		if (prumaxa == true || nivel > maxa){
 			maxa=nivel;
 			pokemaxa=nom[e];
-		}else{ if ( nivel < mina){
+			prumaxa=false;
+		}else{ if ( prumina == true ||nivel < mina){
 			mina= nivel;
 			pokemina=nom[e];
+			prumina=false;
 		}
 		}	nivela=nivela+nivel;
 			cont_a ++;
