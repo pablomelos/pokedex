@@ -13,7 +13,7 @@ string tipo;
 string nomb;
 string nombre;
 int nivel;
-string nom[300];
+string nom[1000];// carga máxima en el array
 string tip[1000];
 int nivell[1000];
 int e=0;
